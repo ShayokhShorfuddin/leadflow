@@ -14,7 +14,7 @@ export default function BottomCard() {
             the results you are after.
           </p>
 
-          <DialogButton />
+          <DialogButton className=""/>
         </div>
       </div>
     </section>
