@@ -114,13 +114,11 @@ export function Logo() {
   );
 }
 
-export function DialogButton() {
+export function DialogButton({ className }: { className: string }) {
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button size={"sm"} className="hidden md:inline-flex">
-          Contact Us
-        </Button>
+      <AlertDialogTrigger asChild className={className}>
+        <Button size={"sm"}>Contact Us</Button>
       </AlertDialogTrigger>
 
       <AlertDialogContent>
@@ -157,9 +155,8 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between pt-4 px-5">
       <Logo />
-
       <NavMenu />
-      <DialogButton />
+      <DialogButton className={"hidden md:block"} />
 
       <Button
         variant={"ghost"}
@@ -185,7 +182,7 @@ export default function Navbar() {
               <Link href="#FAQ">FAQ</Link>
             </li>
             <li>
-              <DialogButton />
+              <DialogButton className={"md:hidden"} />
             </li>
           </ul>
         </div>
@@ -210,5 +207,3 @@ function ListItem({
     </li>
   );
 }
-
-// TODO: Add Transition when opening/closing the menu
